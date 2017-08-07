@@ -1,5 +1,5 @@
 beforeAll(function() {
-    var temp = '<body> <div id="one"> <input id="text1" type="text"/> <button id="doText">DO TEXT</button> <div id="result1"> Your result will appear here! </div></div><div id="two"> <input id="text2" type="text"/> <button id="doNumber">DO Number</button> <div id="result2"> Your result will appear here! </div></div></body>';
+    var temp = '<body> <div id="one"> <input id="text1" type="text"/> <button id="doText">DO TEXT</button> <div id="result1"> Your result will appear here! </div></div><div id="two"> <input id="text2" type="text"/> <button id="doNumber">DO Number</button> <div id="result2"> Your result will appear here! </div></div><div id="three"> <input id="text3" type="text"/> <button id="doNumberSentence">DO Number from Senetnce</button> <div id="result3"> Your result will appear here! </div></div></body>';
     document.body.insertAdjacentHTML('afterbegin', temp);
 });
 
@@ -64,7 +64,7 @@ describe("This is getInWords() test", function() {
 
 });
 
-describe("This is doText()", function() {
+describe("This is doText() test", function() {
     it("should read the value", function() {
         document.getElementById("text1").value = 1;
         doText();
@@ -72,10 +72,18 @@ describe("This is doText()", function() {
     });
 });
 
-describe("This is doNumber()", function() {
+describe("This is doNumber() test", function() {
     it("should read the value", function() {
         document.getElementById("text2").value = "one";
         doNumber();
         expect(document.getElementById("result2").innerHTML).toBe("1");
+    });
+});
+
+describe("This is doNumberSentence() test", function() {
+    it("should read the value", function() {
+        document.getElementById("text3").value = "this is 1 orange and 3 apples";
+        doNumberSentence();
+        expect(document.getElementById("result3").innerHTML).toBe("this is one orange and three apples");
     });
 });

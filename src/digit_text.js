@@ -85,3 +85,18 @@ var getInWords = function(number) {
     }
     return word.trim();
 };
+
+var getNumberSentence = function(sentence) {
+    sentence = sentence.trim();
+    var word = "";
+    var sentenceArray = sentence.split(" ");
+    var i = 0;
+    for (i = 0; i < sentenceArray.length; i++) {
+        if (isNaN(Number(sentenceArray[i]))) {
+            word = word + sentenceArray[i] + " ";
+        } else {
+            word = word + getInWords(sentenceArray[i]) + " ";
+        }
+    }
+    return word.trim();
+};

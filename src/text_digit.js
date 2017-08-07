@@ -48,7 +48,6 @@ var getNumber = function(inputString) {
 };
 
 var wordToNumber = function(word) {
-
     var tempNumber = low[word];
     if (tempNumber != null) {
         trackerG = trackerG + tempNumber;
@@ -61,4 +60,32 @@ var wordToNumber = function(word) {
             trackerG = 0;
         }
     }
+};
+
+var getTextSentence = function(sentence) {
+    sentence = sentence.toLowerCase().replace(/and/g, " ");
+    var sentenceArray = (sentence + " .").split(" ");
+
+    var start = false;
+    var word = "";
+    var finalWord = "";
+    var i = 0;
+    for (i = 0; i < sentenceArray.length; i++) {
+        //console.log(low[sentenceArray[i]] + "   " + high[sentenceArray[i]]);
+        //console.log(sentenceArray[i]);
+        if (low[sentenceArray[i]] != undefined || high[sentenceArray[i]] != undefined) {
+            // console.log(sentenceArray[i]);
+            start = true;
+            word = word + sentenceArray[i] + " ";
+        } else if (start) {
+            start = false;
+            var tempWord = getNumber(word);
+            finalWord = finalWord + tempWord + " " + sentenceArray[i] + " ";
+            word = "";
+        } else {
+            start = false;
+            finalWord = finalWord + sentenceArray[i] + " ";
+        }
+    }
+    return finalWord.trim();
 };

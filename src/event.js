@@ -10,7 +10,22 @@ function doNumber() {
     var num = getNumber(string);
     document.getElementById("result2").innerHTML = num;
 }
+
+function doNumberSentence() {
+    var string = document.getElementById("text3").value.trim();
+    var sentence = getNumberSentence(string);
+    document.getElementById("result3").innerHTML = sentence;
+}
+
+function doTextSentence() {
+    var string = document.getElementById("text4").value.trim();
+    var sentence = getTextSentence(string);
+    document.getElementById("result4").innerHTML = sentence;
+}
+
 window.onload = function() {
     document.getElementById("doText").addEventListener("click", doText);
     document.getElementById("doNumber").addEventListener("click", doNumber);
+    document.getElementById("doNumberSentence").addEventListener("click", doNumberSentence);
+    document.getElementById("doTextSentence").addEventListener("click", doTextSentence);
 };
