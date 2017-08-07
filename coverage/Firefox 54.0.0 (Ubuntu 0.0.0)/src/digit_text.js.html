@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/digit_text.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> digit_text.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>41/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>60/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>41/41</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var a = ['', 'one ', 'two ', 'three ', 'four ', 'five ', 'six ', 'seven ', 'eight ', 'nine ', 'ten ', 'eleven ', 'twelve ', 'thirteen ', 'fourteen ', 'fifteen ', 'sixteen ', 'seventeen ', 'eighteen ', 'nineteen '];
+var b = ['', '', 'twenty ', 'thirty ', 'forty ', 'fifty ', 'sixty ', 'seventy ', 'eighty ', 'ninety '];
+&nbsp;
+&nbsp;
+var getInWords = function(number) {
+    var word = "";
+    if (number.toString().length &gt; 12) {
+        return "cannot be computed";
+    }
+    if (number % 100 &lt; 21) {
+        word = word + a[number % 100];
+        //  console.log(word);
+    } else if (number % 10 != 0) {
+        word = word + b[Math.floor(number / 10) % 10] + a[number % 10];
+        //console.log("2nd" + word);
+    } else {
+        word = word + b[Math.floor(number / 10) % 10];
+        //console.log("3rd" + word);
+    }
+    /**Upto 99 done */
+    if (Math.floor(number / 100) &gt; 0 &amp;&amp; (Math.floor(number / 100) % 10) != 0) {
+        word = a[Math.floor(number / 100) % 10] + "hundred and " + word;
+        //console.log("4th" + word);
+        //console.log(number);
+    }
+&nbsp;
+    number = Math.floor(number / 1000);
+    //console.log("Number after floor " + number);
+    if (number % 100 &lt; 21 &amp;&amp; number != 0 &amp;&amp; number % 100 != 0) {
+        word = a[number % 100] + "thousand " + word;
+        //console.log(word);
+    } else if (number % 10 != 0 &amp;&amp; number % 100 != 0) {
+        word = b[Math.floor(number / 10) % 10] + a[number % 10] + "thousand " + word;
+        //console.log("2nd" + word);
+    } else if (number != 0 &amp;&amp; number % 10 == 0 &amp;&amp; number % 100 != 0) {
+        word = b[Math.floor(number / 10) % 10] + "thousand " + word;
+        //console.log("3rd" + word);
+    }
+    /**Upto 9999 done */
+&nbsp;
+    if (number != 0 &amp;&amp; Math.floor(number / 100) &gt; 0 &amp;&amp; Math.floor(number / 100) % 10 != 0) {
+        word = a[Math.floor(number / 100) % 10] + "hundred " + word;
+        //console.log("4th" + word);
+    }
+&nbsp;
+    /**Upto 999,999 done */
+&nbsp;
+    number = Math.floor(number / 1000);
+&nbsp;
+    if (number % 100 &lt; 21 &amp;&amp; number != 0 &amp;&amp; number % 100 != 0) {
+        word = a[number % 100] + "million " + word;
+        //console.log(word);
+    } else if (number % 10 != 0 &amp;&amp; number % 100 != 0) {
+        word = b[Math.floor(number / 10) % 10] + a[number % 10] + "million " + word;
+        //console.log("2nd" + word);
+    } else if (number != 0 &amp;&amp; number % 100 != 0) {
+        word = b[Math.floor(number / 10) % 10] + "million " + word;
+        //console.log("3rd" + word);
+    }
+    /**Upto 99,999,999 done */
+&nbsp;
+    if (number != 0 &amp;&amp; Math.floor(number / 100) &gt; 0 &amp;&amp; Math.floor(number / 100) % 10 != 0) {
+        word = a[Math.floor(number / 100) % 10] + "hundred " + word;
+        //console.log("4th" + word);
+    }
+    /**Upto 999,999,999 done */
+&nbsp;
+    number = Math.floor(number / 1000);
+&nbsp;
+    if (number % 100 &lt; 21 &amp;&amp; number != 0) {
+        word = a[number % 100] + "billion " + word;
+        //console.log(word);
+    } else if (number % 10 != 0) {
+        word = b[Math.floor(number / 10) % 10] + a[number % 10] + "billion " + word;
+        //console.log("2nd" + word);
+    } else if (number != 0) {
+        word = b[Math.floor(number / 10) % 10] + "billion " + word;
+        //console.log("3rd" + word);
+    }
+    /**Upto 99,999,999 done */
+&nbsp;
+    if (number != 0 &amp;&amp; Math.floor(number / 100) &gt; 0 &amp;&amp; Math.floor(number / 100) % 10 != 0) {
+        word = a[Math.floor(number / 100) % 10] + "hundred " + word;
+        //console.log("4th" + word);
+    }
+    return word.trim();
+};</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Aug 07 2017 12:16:22 GMT+0530 (IST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

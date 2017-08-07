@@ -43,9 +43,7 @@ var getNumber = function(inputString) {
     trackerG = 0;
     var lowercaseString = inputString.toLowerCase().replace(/and/g, "");
     var splittedWords = lowercaseString.split(" ");
-    //console.log(splittedWords);
     splittedWords.forEach(wordToNumber);
-    //console.log(trackerN + trackerG);
     return trackerN + trackerG;
 };
 
@@ -54,18 +52,13 @@ var wordToNumber = function(word) {
     var tempNumber = low[word];
     if (tempNumber != null) {
         trackerG = trackerG + tempNumber;
-        //   console.log(trackerN + trackerG);
     } else if (word == "hundred") {
         trackerG = trackerG * 100;
-        // console.log(trackerN + trackerG);
     } else {
-        //console.log("from high:" + word);
         tempNumber = high[word];
         if (tempNumber != null) {
             trackerN = trackerN + (trackerG * tempNumber);
-            //   console.log(trackerN + trackerG);
             trackerG = 0;
-            // console.log(trackerN + trackerG);
         }
     }
 };

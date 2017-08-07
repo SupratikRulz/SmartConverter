@@ -4,7 +4,7 @@ var b = ['', '', 'twenty ', 'thirty ', 'forty ', 'fifty ', 'sixty ', 'seventy ',
 
 var getInWords = function(number) {
     var word = "";
-    if (number.toString().length > 10) {
+    if (number.toString().length > 12) {
         return "cannot be computed";
     }
     if (number % 100 < 21) {
@@ -18,7 +18,7 @@ var getInWords = function(number) {
         //console.log("3rd" + word);
     }
     /**Upto 99 done */
-    if (Math.floor(number / 100) > 0) {
+    if (Math.floor(number / 100) > 0 && (Math.floor(number / 100) % 10) != 0) {
         word = a[Math.floor(number / 100) % 10] + "hundred and " + word;
         //console.log("4th" + word);
         //console.log(number);
@@ -26,19 +26,19 @@ var getInWords = function(number) {
 
     number = Math.floor(number / 1000);
     //console.log("Number after floor " + number);
-    if (number % 100 < 21 && number != 0) {
+    if (number % 100 < 21 && number != 0 && number % 100 != 0) {
         word = a[number % 100] + "thousand " + word;
         //console.log(word);
-    } else if (number % 10 != 0) {
+    } else if (number % 10 != 0 && number % 100 != 0) {
         word = b[Math.floor(number / 10) % 10] + a[number % 10] + "thousand " + word;
         //console.log("2nd" + word);
-    } else if (number != 0) {
+    } else if (number != 0 && number % 10 == 0 && number % 100 != 0) {
         word = b[Math.floor(number / 10) % 10] + "thousand " + word;
         //console.log("3rd" + word);
     }
     /**Upto 9999 done */
 
-    if (number != 0 && Math.floor(number / 100) > 0) {
+    if (number != 0 && Math.floor(number / 100) > 0 && Math.floor(number / 100) % 10 != 0) {
         word = a[Math.floor(number / 100) % 10] + "hundred " + word;
         //console.log("4th" + word);
     }
@@ -47,19 +47,19 @@ var getInWords = function(number) {
 
     number = Math.floor(number / 1000);
 
-    if (number % 100 < 21 && number != 0) {
+    if (number % 100 < 21 && number != 0 && number % 100 != 0) {
         word = a[number % 100] + "million " + word;
         //console.log(word);
-    } else if (number % 10 != 0) {
+    } else if (number % 10 != 0 && number % 100 != 0) {
         word = b[Math.floor(number / 10) % 10] + a[number % 10] + "million " + word;
         //console.log("2nd" + word);
-    } else if (number != 0) {
+    } else if (number != 0 && number % 100 != 0) {
         word = b[Math.floor(number / 10) % 10] + "million " + word;
         //console.log("3rd" + word);
     }
     /**Upto 99,999,999 done */
 
-    if (number != 0 && Math.floor(number / 100) > 0) {
+    if (number != 0 && Math.floor(number / 100) > 0 && Math.floor(number / 100) % 10 != 0) {
         word = a[Math.floor(number / 100) % 10] + "hundred " + word;
         //console.log("4th" + word);
     }
@@ -79,7 +79,7 @@ var getInWords = function(number) {
     }
     /**Upto 99,999,999 done */
 
-    if (number != 0 && Math.floor(number / 100) > 0) {
+    if (number != 0 && Math.floor(number / 100) > 0 && Math.floor(number / 100) % 10 != 0) {
         word = a[Math.floor(number / 100) % 10] + "hundred " + word;
         //console.log("4th" + word);
     }

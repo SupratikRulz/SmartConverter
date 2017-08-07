@@ -1,3 +1,8 @@
+beforeAll(function() {
+    var temp = '<body> <div id="one"> <input id="text1" type="text"/> <button id="doText">DO TEXT</button> <div id="result1"> Your result will appear here! </div></div><div id="two"> <input id="text2" type="text"/> <button id="doNumber">DO Number</button> <div id="result2"> Your result will appear here! </div></div></body>';
+    document.body.insertAdjacentHTML('afterbegin', temp);
+});
+
 describe("This is getNumber() test", function() {
     it("should call wordToNumber atleast once", function() {
         spyOn(window, "wordToNumber");
@@ -46,8 +51,31 @@ describe("This is getInWords() test", function() {
         expect(getInWords(99999999)).toBe("ninety nine million nine hundred ninety nine thousand nine hundred and ninety nine");
         expect(getInWords(999999999)).toBe("nine hundred ninety nine million nine hundred ninety nine thousand nine hundred and ninety nine");
         expect(getInWords(9999999999)).toBe("nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred and ninety nine");
-        expect(getInWords(99999999999)).toBe("cannot be computed");
+        expect(getInWords(99999999999)).toBe("ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred and ninety nine");
+        expect(getInWords(999999999999)).toBe("nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred and ninety nine");
         expect(getInWords(7125)).toBe("seven thousand one hundred and twenty five");
+        expect(getInWords(140000)).toBe("one hundred forty thousand");
+        expect(getInWords(40000)).toBe("forty thousand");
+        expect(getInWords(40000000)).toBe("forty million");
+        expect(getInWords(40000000000)).toBe("forty billion");
+        expect(getInWords(400000000000)).toBe("four hundred billion");
+        expect(getInWords(4000000000000)).toBe("cannot be computed");
     });
 
+});
+
+describe("This is doText()", function() {
+    it("should read the value", function() {
+        document.getElementById("text1").value = 1;
+        doText();
+        expect(document.getElementById("result1").innerHTML).toBe("one");
+    });
+});
+
+describe("This is doNumber()", function() {
+    it("should read the value", function() {
+        document.getElementById("text2").value = "one";
+        doNumber();
+        expect(document.getElementById("result2").innerHTML).toBe("1");
+    });
 });
