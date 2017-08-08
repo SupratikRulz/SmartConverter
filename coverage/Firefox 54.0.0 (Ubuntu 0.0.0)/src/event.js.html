@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.71% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>18/21</span>
+        <span class='fraction'>8/12</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/5</span>
+        <span class='fraction'>2/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.71% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>18/21</span>
+        <span class='fraction'>8/12</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -73,17 +73,18 @@
 28
 29
 30
-31</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+31
+32</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -96,25 +97,26 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">function doText() {
-    var num = Number((document.getElementById("text1").value).trim());
-    var string = getInWords(num);
-    document.getElementById("result1").innerHTML = string;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// function doText() {
+//     var num = Number((document.getElementById("text1").value).trim());
+//     var string = getInWords(num);
+//     document.getElementById("result1").innerHTML = string;
 &nbsp;
-}
+// }
 &nbsp;
-function doNumber() {
-    var string = document.getElementById("text2").value.trim();
-    var num = getNumber(string);
-    document.getElementById("result2").innerHTML = num;
-}
+// function doNumber() {
+//     var string = document.getElementById("text2").value.trim();
+//     var num = getNumber(string);
+//     document.getElementById("result2").innerHTML = num;
+// }
 &nbsp;
 function doNumberSentence() {
     var string = document.getElementById("text3").value.trim();
@@ -124,13 +126,14 @@ function doNumberSentence() {
 &nbsp;
 <span class="fstat-no" title="function not covered" >function doTextSentence() {</span>
 <span class="cstat-no" title="statement not covered" >    var string = document.getElementById("text4").value.trim();</span>
+<span class="cstat-no" title="statement not covered" >    string = insertSpaceBeforeAfterPunctuation(string);</span>
 <span class="cstat-no" title="statement not covered" >    var sentence = getTextSentence(string);</span>
 <span class="cstat-no" title="statement not covered" >    document.getElementById("result4").innerHTML = sentence;</span>
 }
 &nbsp;
 window.onload = function() {
-    document.getElementById("doText").addEventListener("click", doText);
-    document.getElementById("doNumber").addEventListener("click", doNumber);
+    // document.getElementById("doText").addEventListener("click", doText);
+    // document.getElementById("doNumber").addEventListener("click", doNumber);
     document.getElementById("doNumberSentence").addEventListener("click", doNumberSentence);
     document.getElementById("doTextSentence").addEventListener("click", doTextSentence);
 };</pre></td></tr>
@@ -139,7 +142,7 @@ window.onload = function() {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Aug 07 2017 14:19:53 GMT+0530 (IST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 08 2017 14:04:02 GMT+0530 (IST)
 </div>
 </div>
 <script src="../prettify.js"></script>

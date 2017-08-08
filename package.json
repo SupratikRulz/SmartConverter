@@ -19,7 +19,9 @@
         "karma-fixture": "^0.2.6",
         "karma-jasmine": "^1.1.0"
     },
-    "dependencies": {},
+    "dependencies": {
+        "number-to-words": "^1.2.3"
+    },
     "bugs": {
         "url": "https://github.com/SupratikRulz/SmartConverter/issues"
     },

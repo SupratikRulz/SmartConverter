@@ -1,5 +1,5 @@
 beforeAll(function() {
-    var temp = '<body> <div id="one"> <input id="text1" type="text"/> <button id="doText">DO TEXT</button> <div id="result1"> Your result will appear here! </div></div><div id="two"> <input id="text2" type="text"/> <button id="doNumber">DO Number</button> <div id="result2"> Your result will appear here! </div></div><div id="three"> <input id="text3" type="text"/> <button id="doNumberSentence">DO Number from Senetnce</button> <div id="result3"> Your result will appear here! </div></div></body>';
+    var temp = '<body>  <div id="three"> <input id="text3" type="text"/> <button id="doNumberSentence">DO Number from Senetnce</button> <div id="result3"> Your result will appear here! </div></div><div id="four"> <input id="text4" type="text"/> <button id="doTextSentence">DO Text from Senetnce</button> <div id="result4"> Your result will appear here! </div></div></body>';
     document.body.insertAdjacentHTML('afterbegin', temp);
 });
 
@@ -11,9 +11,9 @@ describe("This is getNumber() test", function() {
     });
 
     it("should return the number in decimal format from the word format", function() {
-        expect(getNumber("one hundred and two")).toBe(102);
+        expect(getNumber("one hundred two")).toBe(102);
         expect(getNumber("one thousand fifty")).toBe(1050);
-        expect(getNumber("two million and one hundred five thousand two hundred and ninety six")).toBe(2105296);
+        expect(getNumber("two million one hundred five thousand two hundred ninety six")).toBe(2105296);
         expect(getNumber("seven thousand one hundred twenty five")).toBe(7125);
     });
 });
@@ -35,55 +35,54 @@ describe("This is wordToNumber() test", function() {
 });
 
 
-describe("This is getInWords() test", function() {
+describe("This is numberToEnglish() test", function() {
     it("should give word upto 99", function() {
-        expect(getInWords(9)).toBe("nine");
-        expect(getInWords(10)).toBe("ten");
-        expect(getInWords(19)).toBe("nineteen");
-        expect(getInWords(55)).toBe("fifty five");
-        expect(getInWords(90)).toBe("ninety");
-        expect(getInWords(990)).toBe("nine hundred and ninety");
-        expect(getInWords(999)).toBe("nine hundred and ninety nine");
-        expect(getInWords(9999)).toBe("nine thousand nine hundred and ninety nine");
-        expect(getInWords(99999)).toBe("ninety nine thousand nine hundred and ninety nine");
-        expect(getInWords(999999)).toBe("nine hundred ninety nine thousand nine hundred and ninety nine");
-        expect(getInWords(9999999)).toBe("nine million nine hundred ninety nine thousand nine hundred and ninety nine");
-        expect(getInWords(99999999)).toBe("ninety nine million nine hundred ninety nine thousand nine hundred and ninety nine");
-        expect(getInWords(999999999)).toBe("nine hundred ninety nine million nine hundred ninety nine thousand nine hundred and ninety nine");
-        expect(getInWords(9999999999)).toBe("nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred and ninety nine");
-        expect(getInWords(99999999999)).toBe("ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred and ninety nine");
-        expect(getInWords(999999999999)).toBe("nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred and ninety nine");
-        expect(getInWords(7125)).toBe("seven thousand one hundred and twenty five");
-        expect(getInWords(140000)).toBe("one hundred forty thousand");
-        expect(getInWords(40000)).toBe("forty thousand");
-        expect(getInWords(40000000)).toBe("forty million");
-        expect(getInWords(40000000000)).toBe("forty billion");
-        expect(getInWords(400000000000)).toBe("four hundred billion");
-        expect(getInWords(4000000000000)).toBe("cannot be computed");
+        expect(numberToEnglish(9)).toBe("nine");
+        expect(numberToEnglish(10)).toBe("ten");
+        expect(numberToEnglish(19)).toBe("nineteen");
+        expect(numberToEnglish(55)).toBe("fifty five");
+        expect(numberToEnglish(90)).toBe("ninety");
+        expect(numberToEnglish(990)).toBe("nine hundred ninety");
+        expect(numberToEnglish(999)).toBe("nine hundred ninety nine");
+        expect(numberToEnglish(9999)).toBe("nine thousand nine hundred ninety nine");
+        expect(numberToEnglish(99999)).toBe("ninety nine thousand nine hundred ninety nine");
+        expect(numberToEnglish(999999)).toBe("nine hundred ninety nine thousand nine hundred ninety nine");
+        expect(numberToEnglish(9999999)).toBe("nine million nine hundred ninety nine thousand nine hundred ninety nine");
+        expect(numberToEnglish(99999999)).toBe("ninety nine million nine hundred ninety nine thousand nine hundred ninety nine");
+        expect(numberToEnglish(999999999)).toBe("nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine");
+        expect(numberToEnglish(9999999999)).toBe("nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine");
+        expect(numberToEnglish(99999999999)).toBe("ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine");
+        expect(numberToEnglish(999999999999)).toBe("nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine");
+        expect(numberToEnglish(7125)).toBe("seven thousand one hundred twenty five");
+        expect(numberToEnglish(140000)).toBe("one hundred forty thousand");
+        expect(numberToEnglish(40000)).toBe("forty thousand");
+        expect(numberToEnglish(40000000)).toBe("forty million");
+        expect(numberToEnglish(40000000000)).toBe("forty billion");
+        expect(numberToEnglish(400000000000)).toBe("four hundred billion");
     });
 
 });
 
-describe("This is doText() test", function() {
-    it("should read the value", function() {
-        document.getElementById("text1").value = 1;
-        doText();
-        expect(document.getElementById("result1").innerHTML).toBe("one");
-    });
-});
+// describe("This is doText() test", function() {
+//     it("should read the value", function() {
+//         document.getElementById("text1").value = 1;
+//         doText();
+//         expect(document.getElementById("result1").innerHTML).toBe("one");
+//     });
+// });
 
-describe("This is doNumber() test", function() {
-    it("should read the value", function() {
-        document.getElementById("text2").value = "one";
-        doNumber();
-        expect(document.getElementById("result2").innerHTML).toBe("1");
-    });
-});
+// describe("This is doNumber() test", function() {
+//     it("should read the value", function() {
+//         document.getElementById("text2").value = "one";
+//         doNumber();
+//         expect(document.getElementById("result2").innerHTML).toBe("1");
+//     });
+// });
 
 describe("This is doNumberSentence() test", function() {
     it("should read the value", function() {
-        document.getElementById("text3").value = "this is 1 orange and 3 apples";
+        document.getElementById("text3").value = "this is 1 orange 3 apples";
         doNumberSentence();
-        expect(document.getElementById("result3").innerHTML).toBe("this is one orange and three apples");
+        expect(document.getElementById("result3").innerHTML).toBe("this is one orange three apples");
     });
 });
